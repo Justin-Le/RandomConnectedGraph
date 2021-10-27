@@ -4,7 +4,7 @@ clc; clearvars; close all;
 
 seed = 0;
 n = 20;
-sparsity = 0.4;
+sparsity = 0.4; % must be a strictly positive real number less than 0.5
 
 [gr, Laplacian] = generateRandomConnectedGraph(seed, n, sparsity);
 
@@ -16,7 +16,8 @@ function [gr, Laplacian] = generateRandomConnectedGraph(seed, n, sparsity)
     % Generates a random undirected connected graph with a user-specified
     % sparsity level.
     
-    % Inputs: the RNG seed; the number of nodes; the sparsity level.
+    % Inputs: the RNG seed; the number of nodes; 
+    % the sparsity level (a strictly positive real number less than 0.5).
     
     % Outputs: the Matlab graph object; the graph Laplacian matrix.
     
